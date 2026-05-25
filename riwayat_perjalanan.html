@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Perjalanan - JOGLO WISATA</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-warning">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="index.html">JOGLO WISATA</a>
+
+            <!-- Button Menu Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link text-white" href="user.html">Beranda</a>
+                    <a class="nav-link text-white" href="riwayat_perjalanan.html">Riwayat Perjalanan</a>
+                    <a class="nav-link text-white" href="index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Utama User -->
+    <section class="d-flex align-items-center" style="min-height: 30vh;">
+        <div class="container text-center">
+            <h1 class="mb-3">Riwayat Perjalanan Anda</h1>
+            <p>Daftar paket yang telah Anda booking</p>
+        </div>
+    </section>
+
+    <!-- Section Tabel Riwayat -->
+    <section class="bg-satu py-5">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered border-dark">
+                    <thead class="table-warning">
+                        <tr class="text-center">
+                            <th>No.</th>
+                            <th>Nama Paket</th>
+                            <th>Biaya</th>
+                            <th>Jumlah Orang</th>
+                            <th>Durasi Perjalanan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelRiwayat">
+                        <!-- Data akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p id="kosong" class="text-muted fs-5" style="display: none;">Belum ada riwayat perjalanan.</p>
+                <div class="btn-group">
+                    <button class="btn btn-danger mx-4" onclick="hapusRiwayat()">Hapus Riwayat</button>
+                    <a href="user.html" class="btn btn-primary">Booking Lagi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; JOGLO WISATA</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript untuk Tabel Riwayat -->
+    <script>
+        // Fungsi untuk menampilkan data riwayat
+        function tampilkanRiwayat() {
+            let riwayat = JSON.parse(localStorage.getItem('riwayatBooking')) || [];
+            let tbody = document.getElementById('tabelRiwayat');
+            let pesanKosong = document.getElementById('kosong');
+            
+            tbody.innerHTML = ""; // Reset tabel
+
+            if (riwayat.length === 0) {
+                // Tampilkan pesan jika tidak ada data
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-5">
+                            <i class="bi bi-calendar-x fs-1"></i><br>
+                            Belum ada riwayat perjalanan<br>
+                            Silakan melakukan booking terlebih dahulu
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            // Loop through data and display in table
+            riwayat.forEach(function(data, index) {
+                let row = `
+                    <tr class="text-center">
+                        <td class="align-middle">${index + 1}</td>
+                        <td class="align-middle fw-bold">${data.paket}</td>
+                        <td class="align-middle text-success">${data.biaya}</td>
+                        <td class="align-middle">${data.orang} Orang</td>
+                        <td class="align-middle">${data.durasi}</td>
+                        <td class="align-middle">
+                            <button class="btn btn-sm btn-danger" onclick="hapusData(${index})">
+                                <i class="bi bi-trash"></i> Hapus
+                            </button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // Fungsi untuk menghapus satu data
+        function hapusData(index) {
+            if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
+                let riwayat = JSON.parse(localStorage.getItem('riwayatBooking')) || [];
+                riwayat.splice(index, 1); // Hapus data pada index tertentu
+                localStorage.setItem('riwayatBooking', JSON.stringify(riwayat));
+                location.reload(); // Refresh halaman
+            }
+        }
+
+        // Fungsi untuk menghapus semua riwayat
+        function hapusRiwayat() {
+            if (confirm("Apakah Anda yakin ingin menghapus semua riwayat?")) {
+                localStorage.removeItem('riwayatBooking');
+                location.reload(); // Refresh halaman
+            }
+        }
+
+        // Panggil fungsi saat halaman dimuat
+        window.onload = tampilkanRiwayat;
+    </script>
+
+</body>
+</html>

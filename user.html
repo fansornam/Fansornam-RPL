@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGLO WISATA - User</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-warning">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="index.html">JOGLO WISATA</a>
+
+            <!-- Button Menu Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link text-white" href="user.html">Beranda</a>
+                    <a class="nav-link text-white" href="riwayat_perjalanan.html">Riwayat Perjalanan</a>
+                    <a class="nav-link text-white" href="index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Utama User -->
+    <section class="d-flex align-items-center" style="min-height: 40vh;">
+        <div class="container text-center">
+            <h1 class="mb-3">Halo, Selamat Datang User!</h1>
+            <p>Anda berhasil login sebagai <b>User</b></p>
+        </div>
+    </section>
+
+    <!-- Section Paket Tourism -->
+    <section id="paket" class="bg-satu py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Paket Tourism</h2>
+            
+            <div class="row">
+                <!-- PW Bali -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Bali.jpg" class="card-img-top" alt="Paket Bali" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Bali</h5>
+                            <p class="card-text small">Durasi: 3 Hari 2 Malam</p>
+                            <p class="card-text small">Kapasitas: 2 Orang</p>
+                            <p class="fw-bold text-primary fs-5">Rp 7.000.000</p>
+                            <button class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#bookingModal" onclick="pilihPaket('Paket Wifiata Bali', 7000000, 3)">Booking</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Bandung -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Bandung.jpg" class="card-img-top" alt="Paket Bandung" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Bandung</h5>
+                            <p class="card-text small">Durasi: 3 Hari 2 Malam</p>
+                            <p class="card-text small">Kapasitas: 2 Orang</p>
+                            <p class="fw-bold text-primary fs-5">Rp 3.000.000</p>
+                            <button class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#bookingModal" onclick="pilihPaket('Paket Wifiata Bandung', 3000000, 3)">Booking</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Bromo -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Bromo.jpg" class="card-img-top" alt="Paket Bromo" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Bromo</h5>
+                            <p class="card-text small">Durasi: 2 Hari 1 Malam</p>
+                            <p class="card-text small">Kapasitas: 2 Orang</p>
+                            <p class="fw-bold text-primary fs-5">Rp 5.000.000</p>
+                            <button class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#bookingModal" onclick="pilihPaket('Paket Wifiata Bromo', 5000000, 2)">Booking</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Jogja -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Jogja.jpg" class="card-img-top" alt="Paket Jogja" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Jogja</h5>
+                            <p class="card-text small">Durasi: 2 Hari 2 Malam</p>
+                            <p class="card-text small">Kapasitas: 2 Orang</p>
+                            <p class="fw-bold text-primary fs-5">Rp 6.000.000</p>
+                            <button class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#bookingModal" onclick="pilihPaket('Paket Wifiata Jogja', 6000000, 2)">Booking</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Lombok -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Lombok.jpg" class="card-img-top" alt="Paket Lombok" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Lombok</h5>
+                            <p class="card-text small">Durasi: 3 Hari 2 Malam</p>
+                            <p class="card-text small">Kapasitas: 2 Orang</p>
+                            <p class="fw-bold text-primary fs-5">Rp 10.000.000</p>
+                            <button class="btn btn-warning mt-auto" data-bs-toggle="modal" data-bs-target="#bookingModal" onclick="pilihPaket('Paket Wifiata Lombok', 10000000, 3)">Booking</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Header Image -->
+    <section class="bg-dua py-3">
+        <img class="header-img w-100" src="assets/headers.png" alt="Header Image">
+    </section>
+
+    <!-- Modal Booking -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Form Booking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="formBooking">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Paket yang Dipilih</label>
+                            <input type="text" class="form-control" id="namaPaket" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jumlah Paket (Rombongan)</label>
+                            <input type="number" class="form-control" id="jumlahPaket" min="1" value="1" required oninput="hitungTotal()">
+                            <div class="form-text">Harga sudah termasuk 2 orang per paket</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Durasi (Hari)</label>
+                            <input type="number" class="form-control" id="durasi" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tanggal Keberangkatan</label>
+                            <input type="date" class="form-control" id="tanggal" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Total Biaya</label>
+                            <input type="text" class="form-control" id="totalBiaya" readonly>
+                            <input type="hidden" id="hargaSatuan">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Konfirmasi Booking</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; JOGLO WISATA</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript untuk Booking -->
+    <script>
+        let hargaPaket = 0;
+
+        function pilihPaket(nama, harga, durasi) {
+            document.getElementById('namaPaket').value = nama;
+            document.getElementById('hargaSatuan').value = harga;
+            document.getElementById('durasi').value = durasi;
+            document.getElementById('jumlahPaket').value = 1;
+            hargaPaket = harga;
+            hitungTotal();
+        }
+
+        function hitungTotal() {
+            let jumlah = parseInt(document.getElementById('jumlahPaket').value);
+            let total = jumlah * hargaPaket;
+            document.getElementById('totalBiaya').value = "Rp " + total.toLocaleString('id-ID');
+        }
+
+        document.getElementById('formBooking').onsubmit = function(e) {
+            e.preventDefault();
+
+            let paket = document.getElementById('namaPaket').value;
+            let paketQty = document.getElementById('jumlahPaket').value;
+            let durasi = document.getElementById('durasi').value;
+            let total = document.getElementById('totalBiaya').value;
+            
+            // Hitung jumlah orang (1 paket = 2 orang)
+            let totalOrang = paketQty * 2;
+            let durasiText = durasi + " Hari " + (durasi - 1) + " Malam";
+
+            // Simpan ke LocalStorage sebagai simulasi riwayat
+            let riwayat = JSON.parse(localStorage.getItem('riwayatBooking')) || [];
+            
+            let baru = {
+                no: riwayat.length + 1,
+                paket: paket,
+                biaya: total,
+                orang: totalOrang,
+                durasi: durasiText
+            };
+
+            riwayat.push(baru);
+            localStorage.setItem('riwayatBooking', JSON.stringify(riwayat));
+
+            alert("Booking Berhasil!\nPaket: " + paket + "\nJumlah: " + paketQty + " paket (" + totalOrang + " orang)\nTotal: " + total);
+            window.location.href = "riwayat_perjalanan.html";
+        };
+    </script>
+
+</body>
+</html>

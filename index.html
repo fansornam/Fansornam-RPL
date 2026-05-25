@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGLO WISATA</title>
+    <!-- Menghubungkan CSS Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Menghubungkan CSS Kustom -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- NAVIGASI -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-warning">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#beranda">JOGLO WISATA</a>
+
+            <!-- BUTTON MENU MOBILE -->
+            <!-- Perbaikan: class navbar-toggler (bukan nav-toggler) & data-bs-target -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- MENU LINK -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <!-- Menambahkan ID tujuan sesuai section yang ada -->
+                    <a class="nav-link text-white" href="#beranda">Beranda</a>
+                    <a class="nav-link text-white" href="#tentang">Tentang</a>
+                    <a class="nav-link text-white" href="#layanan">Layanan</a>
+                    <a class="nav-link text-white" href="#kontak">Kontak</a>
+                    <a class="nav-link text-white" href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION BERANDA / HEADER -->
+    <section id="beranda" class="bg-dua">
+        <div class="header-wrapper">
+            <img class="header-img w-100" src="assets/headers.png" alt="Header Background">
+        </div>
+    </section>
+
+    <!-- SECTION TENTANG KAMI -->
+    <section id="tentang" class="bg-satu">
+        <div class="container">
+            <h2 class="text-center mb-4 pt-5">Tentang Kami</h2>
+
+            <div class="row align-items-center">
+                <!-- Untuk Logo -->
+                <div class="col-md-4 mb-5 mb-md-0 text-center">
+                    <img src="assets/logo.jpg" class="rounded-circle logo-img" alt="Logo Joglo Wisata">
+                </div>
+
+                <!-- Untuk Teksnya -->
+                <div class="col-md-8 mb-5">
+                    <p style="text-align: justify;">
+                        Joglo Wisata menawarkan berbagai pilihan paket wisata Jogja dengan start dari Jogja, Jakarta, Bekasi, Depok, Bandung, Medan, Surabaya, Palembang, Makasar dan kota-kota lainnya. Ada beragam pilihan paket mulai dari paket wisata Jogja 1 hari, paket wisata Jogja 2 hari 1 malam sampai dengan paket wisata Jogja 7 hari 6 malam.
+                        <br><br>
+                        Saat ini kami sudah melayani lebih dari 21 ribu orang dan lebih dari 200 group perusahaan dan instansi untuk berwisata di Indonesia dan luar negeri. Selain paket tour Jogja, biro wisata Joglo Turismo juga mempunyai paket wisata Singapore, paket wisata Karimunjawa, paket wisata Bali dan paket wisata Bromo Batu Malang yang menjadi favorit dari wisatawan Indonesia.
+                        <br><br>
+                        Mau berlibur dengan pilihan tujuan wisata sendiri? Silakan hubungi travel agent terbaik Joglo Jakarta yang akan membantu Anda untuk mewujudkan liburan impian Anda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION LAYANAN -->
+    <section id="layanan" class="bg-dua">
+        <div class="container">
+            <h2 class="text-center mb-4 pt-5">Daftar Paket Layanan</h2>
+            
+            <div class="row justify-content-center">
+
+                <!-- PW Bali -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Bali.jpg" class="card-img-top" alt="Paket Bali">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Bali</h5>
+                            <p class="card-text">Liburan dengan Paket Wisata Bali hemat budget?</p>
+                            <a href="#" class="btn btn-secondary mt-auto">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Bandung -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Bandung.jpg" class="card-img-top" alt="Paket Bandung">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Bandung</h5>
+                            <p class="card-text">Liburan ke Bandung? JOGLO WISATA aja</p>
+                            <a href="#" class="btn btn-secondary mt-auto">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Bromo -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Bromo.jpg" class="card-img-top" alt="Paket Bromo">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Bromo</h5>
+                            <p class="card-text">Liburan ke Bromo dengan budget minimalis?</p>
+                            <a href="#" class="btn btn-secondary mt-auto">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Jogja -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Jogja.jpg" class="card-img-top" alt="Paket Jogja">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Jogja</h5>
+                            <p class="card-text">Liburan ke Wifiateca dengan harga murah meriah!</p>
+                            <a href="#" class="btn btn-secondary mt-auto">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PW Lombok -->
+                <div class="col-md-3 my-3">
+                    <div class="card h-100">
+                        <img src="assets/Paket-Wisata-Lombok.jpg" class="card-img-top" alt="Paket Lombok">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Paket Wisata Lombok</h5>
+                            <p class="card-text">Liburan ke Lombok budget pelajar!?</p>
+                            <a href="#" class="btn btn-secondary mt-auto">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION KONTAK -->
+    <section id="kontak" class="bg-satu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 my-5">
+                    <div class="info-area">
+                        <h2>Kontak Kami</h2>
+                        <p><strong>Jam Operasional:</strong> 08:00 – 17:00</p>
+                        <p><strong>Kantor Pusat:</strong> Jl. Wahid Hasyim No.47 Condongcatur, Depok, Sleman, Yogyakarta</p>
+                        <p><strong>Kantor Cabang:</strong> Perumahan Krian Sejahtera Indah Cluster Cantik C19 No 9 Krian, Sidoarjo, Jawa Timur</p>
+                        <p><strong>Telp:</strong> (0274) 487451</p>
+                        <p><strong>Whatsapp:</strong> 082133750102 / 082138310506</p>
+                    </div>
+                </div>
+                <div class="col-md-8 my-5">
+                    <div class="map-area">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.270070431482!2d110.4038471!3d-7.7611566000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a599860b512bb%3A0xad5c35813c5fd3d1!2sJoglo%20Wisata!5e0!3m2!1sen!2sid!4v1778480409929!5m2!1sen!2sid" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2023 JOGLO WISATA. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
